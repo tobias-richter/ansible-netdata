@@ -21,7 +21,7 @@
     section: "{{ item.section }}"
     option: "{{ item.option }}"
     value: "{{ item.value }}"
-    state: "{{ item.state | default('present')}}"
+    state: "{{ item.state | default('present') }}"
     owner: "{{ netdata_owner }}"
     group: "{{ netdata_group }}"
   with_items: "{{ netdata_configs }}"
