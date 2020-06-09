@@ -1,0 +1,15 @@
+netdata_healthd_path: /etc/netdata/health.d
+netdata_owner: root
+netdata_group: netdata
+
+netdata_healthd_templates:
+  - src: net.conf.j2
+
+netdata_conf_path: /etc/netdata/netdata.conf
+
+netdata_configs:
+  - section: plugin:proc:/proc/diskstats
+    option: "exclude disks"
+    value: loop* ram* dm-*
+
+netdata_max_inbound_packets_dropped: 300

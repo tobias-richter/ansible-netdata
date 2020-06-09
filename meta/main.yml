@@ -1,0 +1,5 @@
+dependencies:
+  - role: mrlesmithjr.netdata
+    tags:
+      - dependency
+      - dependency.netdata

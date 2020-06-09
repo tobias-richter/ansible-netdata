@@ -1,0 +1,29 @@
+- name: "Ensure {{ netdata_healthd_path }} exists."
+  file:
+    path: "{{ netdata_healthd_path }}"
+    state: directory
+
+- name: "Configure netdata health templates."
+  template:
+    src: "{{ item.src }}"
+    dest: "{{ netdata_healthd_path }}/{{ item.src | basename | splitext | first }}"
+    owner: "{{ netdata_owner }}"
+    group: "{{ netdata_group }}"
+    mode: 0640
+  notify:
+    - restart netdata
+
+  with_items: "{{ netdata_healthd_templates }}"
+
+- name: "Configure netdata.conf"
+  ini_file:
+    path: "{{ netdata_conf_path }}"
+    section: "{{ item.section }}"
+    option: "{{ item.option }}"
+    value: "{{ item.value }}"
+    state: "{{ item.state | default('present')}}"
+    owner: "{{ netdata_owner }}"
+    group: "{{ netdata_group }}"
+  with_items: "{{ netdata_configs }}"
+  notify:
+    - restart netdata
