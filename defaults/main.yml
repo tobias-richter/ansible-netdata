@@ -1,15 +1,19 @@
+# Path to netdata health.d
 netdata_healthd_path: /etc/netdata/health.d
+# Owner for netdata config file
 netdata_owner: root
+# Group for netdata config giles
 netdata_group: netdata
 
+# List of templates to deploy to healthd path
 netdata_healthd_templates:
   - src: net.conf.j2
 
+# Path to netdata config
 netdata_conf_path: /etc/netdata/netdata.conf
 
+# Configuration options for netdata.conf
 netdata_configs:
   - section: plugin:proc:/proc/diskstats
     option: "exclude disks"
     value: loop* ram* dm-*
-
-netdata_max_inbound_packets_dropped: 300
