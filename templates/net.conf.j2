@@ -14,33 +14,33 @@
     every: 10s
      info: The current speed of the physical network interface
 
- template: 1m_received_traffic_overflow
+ template: 10m_received_traffic_overflow
        on: net.net
        os: linux
     hosts: *
  families: *
-   lookup: average -1m unaligned absolute of received
+   lookup: average -10m unaligned absolute of received
      calc: ($interface_speed > 0) ? ($this * 100 / ($interface_speed * 1000)) : ( nan )
     units: %
     every: 10s
      warn: $this > (($status >= $WARNING)  ? (80) : (85))
      crit: $this > (($status == $CRITICAL) ? (85) : (90))
-    delay: down 1m multiplier 1.5 max 1h
+    delay: down 10m multiplier 1.5 max 1h
      info: interface received bandwidth usage over net device speed max
        to: sysadmin
 
- template: 1m_sent_traffic_overflow
+ template: 10m_sent_traffic_overflow
        on: net.net
        os: linux
     hosts: *
  families: *
-   lookup: average -1m unaligned absolute of sent
+   lookup: average -10m unaligned absolute of sent
      calc: ($interface_speed > 0) ? ($this * 100 / ($interface_speed * 1000)) : ( nan )
     units: %
     every: 10s
      warn: $this > (($status >= $WARNING)  ? (80) : (85))
      crit: $this > (($status == $CRITICAL) ? (85) : (90))
-    delay: down 1m multiplier 1.5 max 1h
+    delay: down 10m multiplier 1.5 max 1h
      info: interface sent bandwidth usage over net device speed max
        to: sysadmin
 
