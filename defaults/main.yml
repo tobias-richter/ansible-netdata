@@ -17,3 +17,36 @@ netdata_configs:
   - section: plugin:proc:/proc/diskstats
     option: "exclude disks"
     value: loop* ram* dm-*
+
+# Exporting configuration
+netdata_exporting_global_enabled: "no"
+
+# Configuration of graphite export
+netdata_exporting_graphite_instances: []
+#  - name: my_graphite_instance
+#    enabled: "no"
+#    destination: localhost
+#    data_source: average
+#    prefix: netdata
+#    hostname: my_hostname
+#    update_every: 10
+#    buffer_on_failures: 10
+#    timeout_ms: 20000
+#    send_names_instead_of_ids: "yes"
+#    send_charts_matching: "*"
+#    send_hosts_matching: "localhost *"
+
+netdata_exporting_opentsdb_instances: []
+#  - name: my_opentsdb_instance
+#    enabled: "yes"
+#    destination: localhost:4242
+#    protocol: http
+#    data_source: average
+#    prefix: netdata
+#    hostname: "my-name"
+#    update_every: 10
+#    buffer_on_failures: 10
+#    timeout_ms: 20000
+#    send_names_instead_of_ids: "yes"
+#    send_charts_matching: "*"
+#    send_hosts_matching: "localhost *"

@@ -12,8 +12,17 @@
     mode: 0640
   notify:
     - restart netdata
-
   with_items: "{{ netdata_healthd_templates }}"
+
+- name: "Configure netdata exporting."
+  template:
+    src: "templates/etc/netdata/exporting.conf.j2"
+    dest: "/etc/netdata/exporting.conf"
+    owner: "{{ netdata_owner }}"
+    group: "{{ netdata_group }}"
+    mode: 0640
+  notify:
+    - restart netdata
 
 - name: "Configure netdata.conf"
   ini_file:
