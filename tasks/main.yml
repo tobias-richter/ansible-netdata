@@ -34,6 +34,7 @@
     state: "{{ item.state | default('present') }}"
     owner: "{{ netdata_owner }}"
     group: "{{ netdata_group }}"
+    mode: 0640
   with_items: "{{ netdata_configs }}"
   notify:
     - restart netdata
