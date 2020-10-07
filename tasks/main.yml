@@ -2,6 +2,7 @@
   file:
     path: "{{ netdata_healthd_path }}"
     state: directory
+    mode: 0755
 
 - name: "Configure netdata health templates."
   template:
