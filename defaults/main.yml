@@ -8,6 +8,7 @@ netdata_group: netdata
 # List of templates to deploy to healthd path
 netdata_healthd_templates:
   - src: net.conf.j2
+  - src: apps_plugin.conf.j2
 
 # Path to netdata config
 netdata_conf_path: /etc/netdata/netdata.conf
