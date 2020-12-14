@@ -1,6 +1,6 @@
 # tobias_richter.netdata
 
-[![Build Status](https://travis-ci.org/tobias-richter/ansible-netdata.svg?branch=master)](https://travis-ci.org/tobias-richter/ansible-netdata)
+[![Build Status](https://github.com/tobias-richter/ansible-netdata/workflows/CI/badge.svg)](https://github.com/tobias-richter/ansible-netdata/actions)
 
 This role installs and managed netdata using [mrlesmithjr.netdata](https://galaxy.ansible.com/mrlesmithjr/netdata).
 
