@@ -1,1 +1,3 @@
-- name: mrlesmithjr.netdata
+roles:
+  - name: mrlesmithjr.netdata
+collections:
