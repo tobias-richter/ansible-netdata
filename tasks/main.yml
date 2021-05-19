@@ -6,7 +6,7 @@
 
 - name: "Configure netdata health templates."
   template:
-    src: "{{ item.src }}"
+    src: "health.d/{{ item.src }}"
     dest: "{{ netdata_healthd_path }}/{{ item.src | basename | splitext | first }}"
     owner: "{{ netdata_owner }}"
     group: "{{ netdata_group }}"
