@@ -9,6 +9,7 @@ netdata_group: netdata
 netdata_healthd_templates:
   - src: net.conf.j2
   - src: apps_plugin.conf.j2
+  - src: cgroups.conf.j2
 
 # Path to netdata config
 netdata_conf_path: /etc/netdata/netdata.conf
