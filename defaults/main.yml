@@ -1,3 +1,4 @@
+---
 # Path to netdata health.d
 netdata_healthd_path: /etc/netdata/health.d
 # Owner for netdata config file

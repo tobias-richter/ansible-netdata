@@ -1,3 +1,4 @@
+---
 - name: "Ensure {{ netdata_healthd_path }} exists."
   file:
     path: "{{ netdata_healthd_path }}"
