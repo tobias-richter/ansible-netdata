@@ -27,7 +27,7 @@ component: Memory
    lookup: average -2h unaligned
      calc: ($ram) * 100 / $memory_limit
     units: %
-    every: 10s
+    every: 1m
      warn: $this > (($status >= $WARNING)  ? (80) : (90))
      crit: $this > (($status == $CRITICAL) ? (90) : (98))
     delay: down 15m multiplier 1.5 max 1h
