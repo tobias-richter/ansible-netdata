@@ -2,4 +2,4 @@
 - name: test role syntax
   hosts: test
   roles:
-    - netdata
+    - tobias_richter.netdata
