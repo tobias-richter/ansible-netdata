@@ -24,7 +24,7 @@ component: Memory
      type: Utilization
        os: linux
     hosts: *
-   lookup: average -2h unaligned
+   lookup: average -12h unaligned
      calc: ($ram) * 100 / $memory_limit
     units: %
     every: 1m
