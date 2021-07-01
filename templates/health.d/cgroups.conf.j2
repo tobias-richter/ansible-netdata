@@ -29,6 +29,6 @@ component: Memory
     every: 1m
      warn: $this > (($status >= $WARNING)  ? (80) : (90))
      crit: $this > (($status == $CRITICAL) ? (90) : (98))
-    delay: down 30m multiplier 1.5 max 4h
+    delay: up 1h down 15m multiplier 1.5 max 1h
      info: cgroup memory utilization
        to: sysadmin
