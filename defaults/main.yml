@@ -16,10 +16,14 @@ netdata_healthd_templates:
 netdata_conf_path: /etc/netdata/netdata.conf
 
 # Configuration options for netdata.conf
-netdata_configs:
+netdata_configs_default:
   - section: plugin:proc:/proc/diskstats
     option: "exclude disks"
     value: loop* ram* dm-*
+
+netdata_configs_custom: []
+
+netdata_configs: "{{ netdata_configs_default | union(netdata_configs_custom) }}"
 
 # Exporting configuration
 netdata_exporting_global_enabled: "no"
